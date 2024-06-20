@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>music 4 your eyes</title>
+    <meta name="description" content="Soundtrack curated by Eye Musician">
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+
+    <meta property="og:site_name" content="music 4 your eyes">
+    <meta property="og:url" content="https://m4ye.com/">
+    <meta property="og:title" content="music 4 your eyes">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Soundtrack curated by Eye Musician">
+    <meta property="og:image" content="assets/images/logo_m4ye.png">
+    <meta property="og:image:secure_url" content="assets/images/logo_m4ye.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="music 4 your eyes">
+    <meta name="twitter:description" content="Soundtrack curated by Eye Musician">
+    <meta name="twitter:image" content="assets/images/logo_m4ye.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <img src="assets/images/logo_m4ye.png" alt="Logo m4ye" class="header-logo">
+    <div class="music-player">
+        <div class="title-barcode-wrapper">
+            <div class="title-barcode"></div>
+        </div>
+        <div class="controls">
+            <button class="prev"><span class="material-icons">skip_previous</span></button>
+            <button class="play-pause"><span class="material-icons">play_arrow</span></button>
+            <button class="next"><span class="material-icons">skip_next</span></button>
+        </div>
+    </div>
+    <div class="color-dots">
+        <div class="color-dots-raw">
+            <div class="dot" style="background-color: #FF791A;"></div>
+            <div class="dot" style="background-color: #7A84E9;"></div>
+            <div class="dot" style="background-color: #2C935A;"></div>
+            <div class="dot logo-dot" style="background-color: #E52053;">
+                <a href="https://buzyboys.com">
+                    <div class="logo-animation-wrapper">
+                        <img src="assets/images/logo_bzy_white.png" alt="Logo bzy">
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="color-dots-raw">
+            <div class="dot" style="background-color: #4BA18E;"></div>
+            <div class="dot" style="background-color: #B9C13B;"></div>
+            <div class="dot" style="background-color: #6E4101;"></div>
+            <div class="dot" style="background-color: #8FCAA4;"></div>
+        </div>
+    </div>
+    <div class="footer">
+        <a href="https://buzyboys.com">
+            Refill on Buzy Boys gear
+        </a>
+    </div>
+    <audio id="audio-player" src=""></audio>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

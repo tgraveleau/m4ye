@@ -1,0 +1,146 @@
+:root {
+    --background-color: #fff;
+    --text-color: #4C4C4C;
+    --max-width: 400px;
+}
+
+body {
+    font-family: Helvetica Neue, sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    max-width: var(--max-width);
+    padding: 20px;
+    margin: 0 auto
+}
+
+.header-logo {
+    width: 100%;
+    max-width: 140px;
+}
+
+.music-player {
+    margin-top: 160px;
+}
+
+.title-barcode-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+.title-barcode {
+    font-size: 48px;
+    white-space: nowrap;
+    font-family: 'Libre Barcode 128 Text', sans-serif;
+}
+.title-barcode.animated {
+    animation: scroll-text 8s linear alternate infinite;
+    
+}
+@keyframes scroll-text {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-60%);
+    }
+}
+
+.controls {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.controls button {
+    color: var(--text-color);
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
+}
+.controls button:hover {
+    transform: scale(1.2);
+}
+.controls button:active {
+    transform: scale(1.1);
+}
+.controls button span {
+    font-size: 50px;
+}
+
+.color-dots {
+    margin-top: 100px;
+}
+.color-dots-raw {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.color-dots-raw:nth-child(2) {
+    margin-top: 20px;
+}
+.dot {
+    width: 65px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 0 2px;
+}
+.dot:first-of-type {
+    margin-left: 0;
+}
+.dot:last-of-type {
+    margin-right: 0;
+}
+.logo-dot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-animation-wrapper {
+    animation: spin 2s linear infinite;
+    animation-play-state: paused;
+    padding: 3px;
+}
+.logo-dot .logo-animation-wrapper.animated {
+    animation-play-state: running;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.logo-dot img {
+    width: 100%;
+}
+.logo-dot a:hover img {
+    transform: scale(1.1);
+}
+
+.footer {
+    margin-top: 100px;
+    width: 100%;
+    text-align: center;
+}
+.footer a {
+    color: var(--text-color);
+    font-size: small;
+}
+
+@media (max-height: 800px) {
+    .music-player {
+        margin-top: 100px;
+    }
+    .color-dots {
+        margin-top: 50px;
+    }
+    .footer {
+        margin-top: 50px;
+    }
+}
+
+* {
+    transition: all 0.2s;
+}
