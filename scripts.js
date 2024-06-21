@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const progressBar = document.getElementById("progress-bar");
   const titleBarcodeWrapper = document.querySelector(".title-barcode-wrapper");
   const titleBarcodeElement = document.querySelector(".title-barcode");
+  const currentTimeElement = document.getElementById("current-time");
+  const remainingTimeElement = document.getElementById("remaining-time");
 
   const tracks = [
     {
@@ -51,6 +53,10 @@ document.addEventListener("DOMContentLoaded", function () {
     titleBarcodeElement.textContent = title;
     updateMediaSession(track);
     resetScrollAnimation();
+    audioPlayer.addEventListener("loadedmetadata", () => {
+      currentTimeElement.textContent = formatTime(0);
+      remainingTimeElement.textContent = formatTime(audioPlayer.duration);
+    });
   }
 
   function updateMediaSession(track) {
@@ -136,6 +142,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!isNaN(duration)) {
       const progressPercent = (currentTime / duration) * 100;
       progressBar.value = progressPercent;
+      currentTimeElement.textContent = formatTime(currentTime);
+      remainingTimeElement.textContent = formatTime(duration - currentTime);
     }
   });
 
@@ -177,3 +185,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Load the first track initially
   loadTrack(currentTrackIndex);
 });
+
+function formatTime(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
+  return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
+}
